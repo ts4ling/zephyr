@@ -101,8 +101,7 @@ static int regulator_fixed_init(const struct device *dev)
 			return -ENODEV;
 		}
 
-		ret = gpio_pin_configure_dt(&cfg->enable, should_enable ? GPIO_OUTPUT_ACTIVE
-									: GPIO_OUTPUT_INACTIVE);
+		ret = gpio_pin_configure_dt(&cfg->enable, GPIO_OUTPUT_INACTIVE);
 
 		if (ret < 0) {
 			return ret;
